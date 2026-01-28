@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/mapdatabse.dart';
 import 'classDatabase.dart';
 
 class reportDipslay extends StatefulWidget {
@@ -74,6 +75,11 @@ class _reportDipslayState extends State<reportDipslay> {
                         color: Color(0xFF333333),
                       ),
                     ),
+                    const SizedBox(height:12),
+                    FilledButton(onPressed: (){
+                      Mapdatabse.reportslocation();
+                      Navigator.pushNamed(context,'/map');
+                    }, child: Text("Location On Map"))
                   ],
                 ),
               ),

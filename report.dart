@@ -82,6 +82,8 @@ class _reportState extends State<report> {
                 Reports.TappedDate = z[index]['date']!;
                 Reports.TappedLocation = z[index]['location']!;
                 Reports.Tappedstatus = z[index]['status']!;
+                Reports.LAT=z[index]['LAT'];
+                Reports.LNG=z[index]['LNG'];
                 Reports.desc=await Reports.getDesrciptionByid(Reports.TappednameEvent);
                 Navigator.pushNamed(context, '/reportdislaypage');
               },

@@ -8,12 +8,14 @@ class Reports{
   static var G=[];
   static var X=[];//this is for building seperation 
   static CollectionReference reportnews =FirebaseFirestore.instance.collection('reportnews');
+
   
   static String TappednameEvent="";
   static String TappedDate="";
   static String TappedLocation="";
   static String Tappedstatus="";
-
+  static double LAT=0;
+  static double LNG=0;
   static String TappedDescription="";
 
   static String loginbuild="";
