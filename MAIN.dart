@@ -4,15 +4,32 @@ import 'package:hello_world/widget/homepage.dart';
 import 'package:hello_world/login.dart';
 import 'package:hello_world/widget/sidemenu.dart';
 import 'package:hello_world/entry_point.dart';
-
+import 'report.dart';
+import 'reportsDisplay.dart';
+import 'map.dart';
+import 'news.dart';
 import 'register.dart';
+import 'report.dart';
+import 'reportsDisplay.dart';
+import 'map.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+await Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(MaterialApp(home: const Login(), routes: {
     '/calender': (context) => const CalendarPage(),
     '/homemain': (context) => const HomePage(),
     '/login': (context) => const Login(),
     '/homepage': (context) => const RegisterPage(),
+    '/reportdislaypage':(context) => const reportDipslay(),
+    '/reportpage':(context) => const report(),
+    '/map' :(context)=> const MyMap(),
+    '/News':(context)=> const News(),
   }));
 }
 

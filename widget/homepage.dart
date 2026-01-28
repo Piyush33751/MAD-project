@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/map.dart';
 import 'package:hello_world/widget/sidemenu.dart';
 import 'package:hello_world/entry_point.dart';
 import 'package:hello_world/calender.dart';
 import 'package:hello_world/classDatabase.dart';
-
-void main() {
-  runApp(const HdbApp());
-}
+import 'package:hello_world/report.dart';
 
 class HdbApp extends StatelessWidget {
   const HdbApp({super.key});
@@ -95,11 +93,21 @@ class HomePage extends StatelessWidget {
                 ),
                 _serviceTile(context, Icons.report, 'Reports', () async{
                   await Reports.checkstatus();
-                  Navigator.pushNamed(context, '/reportpage');
+                  Navigator.pushNamed(context,'/reportpage');
                 }),
-                _serviceTile(context, Icons.map, 'HDB Map', () {}),
+                _serviceTile(context, Icons.map, 'HDB Map', () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyMap(),
+                      ),
+                    );
+                }),
                 _serviceTile(context, Icons.search, 'Search Flats', () {}),
-                _serviceTile(context, Icons.newspaper, 'News', () {}),
+                _serviceTile(context, Icons.newspaper, 'News', ()async {
+                    await Reports.checkstatus();
+                    Navigator.pushNamed(context,'/News');
+                }),
                 _serviceTile(context, Icons.support_agent, 'Ask HDB', () {}),
               ],
             ),
