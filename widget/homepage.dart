@@ -91,8 +91,8 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-                _serviceTile(context, Icons.report, 'Reports', () async{
-                  await Reports.checkstatus();
+                _serviceTile(context, Icons.report, 'Reports', () {
+                  Reports.checkstatus();
                   Navigator.pushNamed(context,'/reportpage');
                 }),
                 _serviceTile(context, Icons.map, 'HDB Map', () {
@@ -104,8 +104,8 @@ class HomePage extends StatelessWidget {
                     );
                 }),
                 _serviceTile(context, Icons.search, 'Search Flats', () {}),
-                _serviceTile(context, Icons.newspaper, 'News', ()async {
-                    await Reports.checkstatus();
+                _serviceTile(context, Icons.newspaper, 'News', () {
+                     Reports.checkstatus();
                     Navigator.pushNamed(context,'/News');
                 }),
                 _serviceTile(context, Icons.support_agent, 'Ask HDB', () {}),

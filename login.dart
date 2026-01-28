@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hello_world/classDatabase.dart';
 import 'package:hello_world/widget/homepage.dart';
 import 'package:hello_world/register.dart';
 
@@ -40,7 +41,9 @@ class _LoginState extends State<Login> {
   final TextEditingController _pwController = TextEditingController();
   final TextEditingController _hdbblocknumber = TextEditingController();
 
-  void _login() {
+  void _login() async{
+    Reports.loginbuild=_hdbblocknumber.text;
+    await Reports.buildingsorter();
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const HomePage()),

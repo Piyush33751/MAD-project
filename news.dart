@@ -75,7 +75,7 @@ class _NewsState extends State<News> {
               leading:Container(
                 width: 48,
                 height: 48,
-                child:Image.asset('assests/imgs/${z[index]['src']}'),
+                child:Image.asset('assets/images/${z[index]['src']}'),
               ),
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
