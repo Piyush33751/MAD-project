@@ -5,6 +5,7 @@ import 'package:hello_world/entry_point.dart';
 import 'package:hello_world/calender.dart';
 import 'package:hello_world/classDatabase.dart';
 import 'package:hello_world/report.dart';
+import 'package:hello_world/search.dart';
 
 class HdbApp extends StatelessWidget {
   const HdbApp({super.key});
@@ -92,14 +93,18 @@ class HomePage extends StatelessWidget {
                   },
                 ),
                 _serviceTile(context, Icons.report, 'Reports', () {
+                 
                   Reports.checkstatus();
                   Navigator.pushNamed(context,'/reportpage');
                 }),
                 _serviceTile(context, Icons.map, 'HDB Map', () {
                   Navigator.pushNamed(context,'/map');
                 }),
-                _serviceTile(context, Icons.search, 'Search Flats', () {}),
+                _serviceTile(context, Icons.search, 'Search Flats', () {
+                  Navigator.pushNamed(context,'/search');
+                }),
                 _serviceTile(context, Icons.newspaper, 'News', () {
+                 
                      Reports.checkstatus();
                     Navigator.pushNamed(context,'/News');
                 }),

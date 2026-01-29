@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:hello_world/mapdatabse.dart';
 
 
 class MyMap extends StatefulWidget {
@@ -12,16 +13,14 @@ class MyMap extends StatefulWidget {
 }
 
 class _MyMapState extends State<MyMap> {
-  var inputHDB="232";
-  var blocklocationLAT={"327":1.3140313059361606,"232":1.3584854916768148};
-  var blocklocationLNG={"327":103.76659589239317,"232": 103.88834160328719};
+  
   @override
 Widget build(BuildContext context) {
   return Scaffold(
-   appBar: AppBar(title:Text("HDB Block ${inputHDB}"),backgroundColor: Colors.red,), 
+   appBar: AppBar(title:Text("HDB Block "+Mapdatabse.loginbuild),backgroundColor: Colors.red,), 
     body:FlutterMap(
     options: MapOptions(
-      initialCenter: LatLng(blocklocationLAT[inputHDB]!, blocklocationLNG[inputHDB]!), 
+      initialCenter: LatLng(Mapdatabse.X['LAT'], Mapdatabse.X['LNG']), 
       initialZoom: 18,
     ),
     children: [
@@ -44,7 +43,7 @@ Widget build(BuildContext context) {
       MarkerLayer(
         markers: [
        Marker(
-          point: LatLng(blocklocationLAT[inputHDB]!, blocklocationLNG[inputHDB]!),
+          point: LatLng(Mapdatabse.X['LAT'], Mapdatabse.X['LNG']),
            width: 20,
           height: 20,
           child: Icon(Icons.location_on),
