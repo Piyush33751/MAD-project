@@ -33,6 +33,19 @@ class Reports{
     return "";
   }
 
+  static Future<String> getDate(String id)async{
+    QuerySnapshot qs = await reportnews.get();
+    for(int i=0;i<qs.docs.length;i++){
+      DocumentSnapshot doc = qs.docs[i];
+      Map<String, dynamic> data = doc.data() as Map<String, dynamic>;   
+      if(data['name']==id){
+        TappedDescription=data['description']!;
+        return TappedDescription;
+      }
+    }
+    return "";
+  }
+
   static void checkstatus(){
     for(int i=0;i<X.length;i++){ 
       if(X[i]['status']== 'easy'){
