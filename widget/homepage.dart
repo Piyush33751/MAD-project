@@ -96,12 +96,7 @@ class HomePage extends StatelessWidget {
                   Navigator.pushNamed(context,'/reportpage');
                 }),
                 _serviceTile(context, Icons.map, 'HDB Map', () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MyMap(),
-                      ),
-                    );
+                  Navigator.pushNamed(context,'/map');
                 }),
                 _serviceTile(context, Icons.search, 'Search Flats', () {}),
                 _serviceTile(context, Icons.newspaper, 'News', () {

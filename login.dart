@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hello_world/classDatabase.dart';
 import 'package:hello_world/widget/homepage.dart';
 import 'package:hello_world/register.dart';
+import 'package:hello_world/mapdatabse.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +44,9 @@ class _LoginState extends State<Login> {
 
   void _login() async{
     Reports.loginbuild=_hdbblocknumber.text;
+    Mapdatabse.loginbuild=_hdbblocknumber.text;
     await Reports.buildingsorter();
+    await Mapdatabse.buildingsorter();
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const HomePage()),
