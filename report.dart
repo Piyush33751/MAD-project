@@ -84,6 +84,7 @@ class _reportState extends State<report> {
                 Reports.Tappedstatus = z[index]['status']!;
                 Reports.LAT=z[index]['LAT'];
                 Reports.LNG=z[index]['LNG'];
+                Reports.ImageName=z[index]['src']!;
                 Reports.desc=await Reports.getDesrciptionByid(Reports.TappednameEvent);
                 Navigator.pushNamed(context, '/reportdislaypage');
               },

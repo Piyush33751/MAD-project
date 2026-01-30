@@ -85,6 +85,7 @@ class _NewsState extends State<News> {
                 Reports.TappedDate = z[index]['date']!;
                 Reports.TappedLocation = z[index]['location']!;
                 Reports.Tappedstatus = z[index]['status']!;
+                Reports.ImageName=z[index]['src']!;
                 Reports.LAT=z[index]['LAT'];
                 Reports.LNG=z[index]['LNG'];
                 Reports.desc=await Reports.getDesrciptionByid(Reports.TappednameEvent);

@@ -66,6 +66,29 @@ class _reportDipslayState extends State<reportDipslay> {
 
                     const SizedBox(height: 12),
 
+
+                     Text(
+                      ' Date:${Reports.TappedDate}',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        height: 1.5,
+                        color: Color(0xFF333333),
+                      ),
+                    ),
+
+                    const SizedBox(height: 12),
+                    Text(
+                      ' Location:${Reports.TappedLocation}',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        height: 1.5,
+                        color: Color(0xFF333333),
+                      ),
+                    ),
+
+
+                    const SizedBox(height: 12),
+
                     // Description text
                     Text(
                       '${Reports.desc}',
@@ -76,6 +99,16 @@ class _reportDipslayState extends State<reportDipslay> {
                       ),
                     ),
                     const SizedBox(height:12),
+
+                    Container(
+                    width: 100,
+                    height: 100,
+                    child:Image.asset('assets/images/${Reports.ImageName}'),//${Reports.ImageName}
+                    ),
+
+                    const SizedBox(height:12),
+
+
                     FilledButton(onPressed: (){
                       Mapdatabse.reportslocation();
                       Navigator.pushNamed(context,'/map');

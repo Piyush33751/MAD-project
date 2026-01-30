@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/classDatabase.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 void main() {
@@ -16,37 +17,32 @@ class _CalendarPageState extends State<CalendarPage> {
   DateTime today = DateTime.now();
   int selectedTab = 0;
 
-  Map<DateTime, Map<String, List<String>>> activities = {
-    DateTime(2026, 1, 21): {
-      'HDB': ['lift maintenance', 'Drain Cleaning'],
-      'Maintenance': ['Corridor cleaning'],
-      'Events': ['CNY Celebration'],
-    },
-    DateTime(2026, 1, 22): {
-      'HDB': ['stairs closed'],
-      'Maintenance': ['Water pipe repair'],
-      'Events': [],
-    },
-    DateTime(2026, 1, 23): {
-      'HDB': ['HDB block Painting'],
-      'Maintenance': ['Sewer Inspection'],
-      'Events': ['Fitness class'],
-    },
-    DateTime(2026, 1, 24): {
-      'HDB': ['water tank cleaning'],
-      'Maintenance': [''],
-      'Events': ['blood donation drive'],
-    },
-  };
+  Map<DateTime, Map<String, List<String>>> activities = {};
+  var x="";
+  var y=[];
+  var date=[];
 
-  List<String> tabs = ['HDB', 'Maintenance', 'Events'];
+
+  List<String> tabs = ['Location', 'Description', 'Events'];
   List<IconData> tabIcons = [Icons.apartment, Icons.build, Icons.event];
 
-  void _onDaySelected(DateTime day, DateTime focusedDay) {
-    setState(() {
-      today = day;
-    });
-  }
+  void _onDaySelected(DateTime day, DateTime focusedDay) async{
+  setState(() {
+    today = day;
+  });
+  
+
+   x = day.toString().split(" ")[0];  // "2026-01-29"
+   y=await Reports.getdata(x);
+   date=y[1].split("-");
+   activities = {
+    DateTime(int.parse(date[0]),int.parse(date[1]),int.parse(date[2])): {
+      'Location': [y[2]],
+      'Description': [y[3]],
+      'Events':[y[0]],
+    },
+  };
+}
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +81,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "HDB Schedule for ${today.toString().split(" ")[0]}",
+                    "Location Schedule for ${today.toString().split(" ")[0]}",
                   ),
                 ),
                 TableCalendar(
@@ -116,6 +112,7 @@ class _CalendarPageState extends State<CalendarPage> {
                   lastDay: DateTime.utc(2026, 12, 31),
                   onDaySelected: _onDaySelected,
                   eventLoader: (day) {
+                    
                     DateTime normalized =
                         DateTime(day.year, day.month, day.day);
                     return activities[normalized] != null ? ['event'] : [];
@@ -136,6 +133,7 @@ class _CalendarPageState extends State<CalendarPage> {
                         setState(() {
                           selectedTab = i;
                         });
+
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 4),
@@ -256,6 +254,14 @@ class _CalendarPageState extends State<CalendarPage> {
             ),
           ),
           SizedBox(height: 20),
+
+          FilledButton(
+            onPressed:(){
+              Reports.desc=y[3];
+              Navigator.pushNamed(context,'/reportdislaypage');
+            }, 
+            child: const Text("Press for more details")),
+            
         ],
       ),
     );

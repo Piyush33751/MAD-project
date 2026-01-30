@@ -4,6 +4,7 @@ import 'firebase_options.dart';
 
 class Reports{
   static var desc=" ";
+  static var ImageName="";
   static var Z=[];
   static var G=[];
   static var X=[];//this is for building seperation 
@@ -17,6 +18,9 @@ class Reports{
   static double LAT=0;
   static double LNG=0;
   static String TappedDescription="";
+
+
+  static List<dynamic> TappedCalendear=[];
 
   static String loginbuild="";
 
@@ -33,17 +37,24 @@ class Reports{
     return "";
   }
 
-  static Future<String> getDate(String id)async{
+  static Future<List<dynamic>> getdata(String date)async{
     QuerySnapshot qs = await reportnews.get();
     for(int i=0;i<qs.docs.length;i++){
       DocumentSnapshot doc = qs.docs[i];
       Map<String, dynamic> data = doc.data() as Map<String, dynamic>;   
-      if(data['name']==id){
-        TappedDescription=data['description']!;
-        return TappedDescription;
+      if(data['date']==date){
+        var f=data['name']!;
+        TappedCalendear.add(f);
+        var g=data['date']!;
+        TappedCalendear.add(g);
+        var j=data['location']!;
+        TappedCalendear.add(j);
+        var l=data['description'];
+        TappedCalendear.add(l);
+        return TappedCalendear;
       }
     }
-    return "";
+    return [];
   }
 
   static void checkstatus(){
