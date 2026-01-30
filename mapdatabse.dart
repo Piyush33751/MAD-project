@@ -5,7 +5,6 @@ import 'classDatabase.dart';
 
 class Mapdatabse{
   static var desc=" ";
-  static Map<String, dynamic> Y={};
   static Map<String, dynamic> X={};//this is for building seperation 
   static CollectionReference hdbtomap =FirebaseFirestore.instance.collection('hdbtomap');
 

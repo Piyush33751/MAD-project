@@ -14,6 +14,7 @@ import 'reportsDisplay.dart';
 import 'map.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'search.dart';
 
 void main() async{
 
@@ -30,6 +31,7 @@ options: DefaultFirebaseOptions.currentPlatform,
     '/reportpage':(context) => const report(),
     '/map' :(context)=> const MyMap(),
     '/News':(context)=> const News(),
+    '/search':(context)=> const Search(),
   }));
 }
 
