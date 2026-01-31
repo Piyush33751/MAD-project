@@ -58,7 +58,7 @@ class _reportDipslayState extends State<reportDipslay> {
                     const Text(
                       "Additional Details For Residents:",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF2F80ED),
                       ),
@@ -70,7 +70,7 @@ class _reportDipslayState extends State<reportDipslay> {
                      Text(
                       ' Date:${Reports.TappedDate}',
                       style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 15,
                         height: 1.5,
                         color: Color(0xFF333333),
                       ),
@@ -80,7 +80,7 @@ class _reportDipslayState extends State<reportDipslay> {
                     Text(
                       ' Location:${Reports.TappedLocation}',
                       style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 15,
                         height: 1.5,
                         color: Color(0xFF333333),
                       ),
@@ -93,7 +93,7 @@ class _reportDipslayState extends State<reportDipslay> {
                     Text(
                       '${Reports.desc}',
                       style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 15,
                         height: 1.5,
                         color: Color(0xFF333333),
                       ),
@@ -101,8 +101,8 @@ class _reportDipslayState extends State<reportDipslay> {
                     const SizedBox(height:12),
 
                     Container(
-                    width: 100,
-                    height: 100,
+                    width: 300,
+                    height: 200,
                     child:Image.asset('assets/images/${Reports.ImageName}'),//${Reports.ImageName}
                     ),
 

@@ -164,6 +164,10 @@ class _CalendarPageState extends State<CalendarPage> {
 
           FilledButton(
             onPressed: (y.isNotEmpty) ? () {
+              Reports.TappednameEvent=y[0];
+              Reports.TappedDate=y[1];
+              Reports.TappedLocation=y[2];
+              Reports.ImageName=y[4];
               Reports.desc = y[3];
               Navigator.pushNamed(context, '/reportdislaypage');
             } : null,
