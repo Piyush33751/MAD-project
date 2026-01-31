@@ -38,6 +38,7 @@ class Reports{
   }
 
   static Future<List<dynamic>> getdata(String date)async{
+    TappedCalendear.clear();
     QuerySnapshot qs = await reportnews.get();
     for(int i=0;i<qs.docs.length;i++){
       DocumentSnapshot doc = qs.docs[i];
