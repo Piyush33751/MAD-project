@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hello_world/classDatabase.dart';
 
 import 'package:hello_world/login/register.dart';
+import 'package:hello_world/mapdatabse.dart';
 import 'package:hello_world/userdataservice.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -89,6 +91,10 @@ class _LoginState extends State<Login> {
     }
 
     if (userFound) {
+      Reports.loginbuild = blockNumber.text;
+      Mapdatabse.loginbuild = blockNumber.text;
+      await Reports.buildingsorter();
+      await Mapdatabse.buildingsorter();
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),

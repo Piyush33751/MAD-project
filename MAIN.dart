@@ -3,12 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hello_world/calender.dart';
 import 'package:hello_world/widget/homepage.dart';
+import 'package:hello_world/login/login.dart';
+import 'package:hello_world/login/register.dart';
+import 'package:hello_world/widget/sidemenu.dart';
+import 'package:hello_world/entry_point.dart';
+import 'package:hello_world/report.dart';
+import 'package:hello_world/reportsDisplay.dart';
+import 'package:hello_world/map.dart';
+import 'package:hello_world/news.dart';
+import 'package:hello_world/search.dart';
 import 'firebase_options.dart';
-
-import 'login/login.dart';
-
-import 'login/register.dart';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -17,7 +21,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   runApp(
     BlocProvider(
       create: (_) => AppLocalizationBloc(),
@@ -48,7 +51,18 @@ class MyApp extends StatelessWidget {
           ],
           locale: state.locale,
           theme: ThemeData(
+            scaffoldBackgroundColor: const Color(0xFFEEF1F8),
             primarySwatch: Colors.red,
+            fontFamily: "Intel",
+            inputDecorationTheme: const InputDecorationTheme(
+              filled: true,
+              fillColor: Colors.white,
+              errorStyle: TextStyle(height: 0),
+              border: defaultInputBorder,
+              enabledBorder: defaultInputBorder,
+              focusedBorder: defaultInputBorder,
+              errorBorder: defaultInputBorder,
+            ),
           ),
           home: Login(),
           routes: {
@@ -56,9 +70,23 @@ class MyApp extends StatelessWidget {
             '/homemain': (context) => const HomePage(),
             '/login': (context) => Login(),
             '/register': (context) => RegisterPage(),
+            '/homepage': (context) => RegisterPage(),
+            '/reportdislaypage': (context) => const reportDipslay(),
+            '/reportpage': (context) => const report(),
+            '/map': (context) => const MyMap(),
+            '/News': (context) => const News(),
+            '/search': (context) => const Search(),
           },
         );
       },
     );
   }
 }
+
+const defaultInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.all(Radius.circular(16)),
+  borderSide: BorderSide(
+    color: Color(0xFFDEE3F2),
+    width: 1,
+  ),
+);
