@@ -1,0 +1,15 @@
+
+{
+  "@@locale": "zh",
+
+  "appTitle": "HDB 应用程序",
+  "login": "登录",
+  "email": "电子邮箱",
+  "password": "密码",
+  "hdbBlockNumber": "HDB 组屋楼号",
+  "register": "注册",
+  "invalidLoginCredentials": "登录凭证无效",
+  "selectLanguage": "选择语言",
+  "english": "英语",
+  "chinese": "中文"
+}

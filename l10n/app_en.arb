@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "HDB App",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "hdbBlockNumber": "HDB Block Number",
+  "register": "Register",
+  "invalidLoginCredentials": "Invalid login credentials",
+  "selectLanguage": "Select Language",
+  "english": "English",
+  "chinese": "Chinese"
+}
