@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-import 'package:hello_world/widget/sidemenu.dart';
-import 'package:hello_world/constants.dart';
-import 'package:hello_world/widget/homepage.dart';
-import 'package:hello_world/utilities/rive_utils.dart';
-import 'package:hello_world/model/rive_asset.dart';
-import 'package:hello_world/model/menu_btn.dart';
-import 'package:hello_world/model/course.dart';
-import 'package:hello_world/animated_bar.dart';
+import 'widget/sidemenu.dart';
+import 'constants.dart';
+import 'widget/homepage.dart';
+import 'utilities/rive_utils.dart';
+import 'model/rive_asset.dart';
+import 'model/menu_btn.dart';
+import 'model/course.dart';
+import 'animated_bar.dart';
 
 class EntryPoint extends StatefulWidget {
   const EntryPoint({super.key});

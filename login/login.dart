@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hello_world/classDatabase.dart';
+import '../classDatabase.dart';
 
-import 'package:hello_world/login/register.dart';
-import 'package:hello_world/mapdatabse.dart';
-import 'package:hello_world/userdataservice.dart';
+import 'register.dart';
+import '../mapdatabse.dart';
+import '../userdataservice.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hello_world/widget/homepage.dart';
+import '../widget/homepage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

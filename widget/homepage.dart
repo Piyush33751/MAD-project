@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/map.dart';
-import 'package:hello_world/widget/sidemenu.dart';
-import 'package:hello_world/entry_point.dart';
-import 'package:hello_world/calender.dart';
-import 'package:hello_world/classDatabase.dart';
-import 'package:hello_world/report.dart';
-import 'package:hello_world/search.dart';
+import '../map.dart';
+import 'sidemenu.dart';
+import '../entry_point.dart';
+import '../calender.dart';
+import '../classDatabase.dart';
+import '../report.dart';
+import '../search.dart';
 
 class HdbApp extends StatelessWidget {
   const HdbApp({super.key});

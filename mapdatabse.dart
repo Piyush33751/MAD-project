@@ -10,7 +10,7 @@ class Mapdatabse{
 
   static String loginbuild="";
 
-  static Future<void> buildingsorter()async{
+  static Future<bool> buildingsorter()async{
     QuerySnapshot qs = await hdbtomap.get();
     for(int i=0;i<qs.docs.length;i++){
       DocumentSnapshot doc = qs.docs[i];
@@ -18,9 +18,12 @@ class Mapdatabse{
       
       if(data['HDB']==loginbuild){
         X=data;
-      }
+        return true;
+      } 
     }
+    return false;
   }
+  
 
   static void reportslocation(){
     X={};

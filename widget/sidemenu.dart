@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_world/infocard.dart';
-import 'package:hello_world/model/rive_asset.dart';
-import 'package:hello_world/widget/sidemenutile.dart';
-import 'package:hello_world/utilities/rive_utils.dart';
+import '../infocard.dart';
+import '../model/rive_asset.dart';
+import 'sidemenutile.dart';
+import '../utilities/rive_utils.dart';
 import 'package:rive/rive.dart';
 
 class Sidemenu extends StatefulWidget {

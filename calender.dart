@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/classDatabase.dart';
+import 'classDatabase.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'mapdatabse.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: CalendarPage()));
@@ -164,11 +165,15 @@ class _CalendarPageState extends State<CalendarPage> {
 
           FilledButton(
             onPressed: (y.isNotEmpty) ? () {
+              Reports.loginbuild = y[7];
+              Mapdatabse.loginbuild = y[7];
               Reports.TappednameEvent=y[0];
               Reports.TappedDate=y[1];
               Reports.TappedLocation=y[2];
               Reports.ImageName=y[4];
               Reports.desc = y[3];
+              Reports.LAT=y[5];
+              Reports.LNG=y[6];
               Navigator.pushNamed(context, '/reportdislaypage');
             } : null,
             child: const Text("Press for more details"),

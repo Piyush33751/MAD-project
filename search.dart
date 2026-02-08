@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-import 'package:hello_world/classDatabase.dart';
-import 'package:hello_world/widget/homepage.dart';
-import 'package:hello_world/mapdatabse.dart';
+import 'classDatabase.dart';
+import 'widget/homepage.dart';
+import 'mapdatabse.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -21,7 +21,23 @@ class _SearchState extends State<Search> {
     Reports.loginbuild = _hdbblocknumber.text;
     Mapdatabse.loginbuild = _hdbblocknumber.text;
     await Reports.buildingsorter();
-    await Mapdatabse.buildingsorter();
+    bool value = await Mapdatabse.buildingsorter();
+    if (value == false) {
+      const snackBar1 = SnackBar(
+        content: Text(
+          "Unavailable HDB Block Number",
+          style: TextStyle(fontSize: 20),
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Colors.purple,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }
   }
 
   @override
@@ -45,10 +61,6 @@ class _SearchState extends State<Search> {
           FilledButton(
               onPressed: () {
                 select();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
               },
               child: Text("Select")),
         ])));

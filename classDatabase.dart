@@ -54,6 +54,12 @@ class Reports{
         TappedCalendear.add(l);
         var t=data['src'];
         TappedCalendear.add(t);
+        var q=data['LAT'];
+        TappedCalendear.add(q);
+        var w=data['LNG'];
+        TappedCalendear.add(w);
+        var e=data['HDB'];
+        TappedCalendear.add(e);
         return TappedCalendear;
       }
     }
